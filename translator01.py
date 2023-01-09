@@ -1,3 +1,4 @@
+import googletrans
 from googletrans import Translator # Use googletrans 3.1.0a0c
 from gtts import gTTS
 from playsound import playsound
@@ -19,12 +20,14 @@ def speak(text, lang):
 if __name__ == '__main__':
   lang = 'ta'
 
-  MyText = "Hello, I am your translator. What is your name? I know few languages. " \
-           "" \
-           "Do you need any help?"
+  MyText = "Hello, I am your translator"
 
   say_hello = trans(MyText, lang)
   print(say_hello)
 
   speak(say_hello, lang)
+
+  languages = googletrans.LANGUAGES
+
+  print(list(languages))
 
