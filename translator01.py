@@ -9,15 +9,21 @@ def trans(org_text, lang):
   return conv_text.text
 
 def speak(text, lang):
-  tts = gTTS(text, lang=lang)
+  result = ",".join([text.rstrip('\n')])
+  tts = gTTS(result, lang=lang, slow=False)
   tts.save('audio_msg.mp3')
+  print(result)
   playsound('./audio_msg.mp3')
 
 
 if __name__ == '__main__':
   lang = 'ta'
 
-  say_hello = trans("Hello I am your friend", lang)
+  MyText = "Hello, I am your translator. What is your name? I know few languages. " \
+           "" \
+           "Do you need any help?"
+
+  say_hello = trans(MyText, lang)
   print(say_hello)
 
   speak(say_hello, lang)
