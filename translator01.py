@@ -20,7 +20,7 @@ def speak(text, lang):
 if __name__ == '__main__':
   lang = 'ta'
 
-  MyText = "Hello, I am your translator"
+  MyText = "Hello"
 
   say_hello = trans(MyText, lang)
   print(say_hello)
